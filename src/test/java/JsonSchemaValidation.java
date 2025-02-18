@@ -14,8 +14,8 @@ public class JsonSchemaValidation {
                 .then()
                 .assertThat()
                 .statusCode(200)
+
                 .body(JsonSchemaValidator.matchesJsonSchema(schema));
-
-
+        System.out.println("test");
     }
 }
