@@ -6,7 +6,7 @@ import java.io.File;
 import static io.restassured.RestAssured.given;
 
 public class JsonSchemaValidation {
-    @Test
+    @Test(description = "validate Schema")
     public void validateSchema() {
         File schema = new File("resources/ExpectedSchema.json");
         given().
