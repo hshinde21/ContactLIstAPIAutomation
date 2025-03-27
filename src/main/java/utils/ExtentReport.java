@@ -6,7 +6,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import java.io.File;
 
 public class ExtentReport {
-    public static ExtentReports extentreport = null;
+    public static ExtentReports extentreport=null;
     public static ExtentTest extentlog;
 
     public static void initialize(String extentConfigXmlpath) {
@@ -19,7 +19,7 @@ public class ExtentReport {
 
             extentreport.addSystemInfo("Environment", "QA");
 
-            extentreport.addSystemInfo("OS", "Mac OS X");
+            extentreport.addSystemInfo("Windows", "Himanshu");
 
             extentreport.loadConfig(new File(System.getProperty("user.dir") + "/resources/extent-config.xml"));
 

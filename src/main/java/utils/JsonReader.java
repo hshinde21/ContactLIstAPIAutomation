@@ -10,16 +10,17 @@ import java.io.File;
 import java.io.IOException;
 
 public class JsonReader {
+    String requestBodyFileName;
 
-    public static String getTestData(String key) throws IOException, ParseException {
-        String testDataValue;
-        return testDataValue = (String) getJsonData().get(key);//input is the key
-    }
+//    public static String getTestData(String requestBodyFileName, String key) throws IOException, ParseException {
+//        String testDataValue;
+//        return testDataValue = (String) getJsonData().get(key);//input is the key
+//    }
 
-    public static JSONObject getJsonData() throws IOException, ParseException {
+    public static JSONObject getJsonData(String requestBodyFileName) throws IOException, ParseException {
 
         //pass the path of the testdata.json file
-        File filename = new File("resources//TestData//testdata.json");
+        File filename = new File(System.getProperty("user.dir") + "/resources/TestData/" + requestBodyFileName);
         //convert json file into string
         String json = FileUtils.readFileToString(filename, "UTF-8");
         //parse the string into object
@@ -28,15 +29,15 @@ public class JsonReader {
         JSONObject jsonObject = (JSONObject) obj;
         return jsonObject;
     }
-
-    public static JSONArray getJsonArray(String key) throws IOException, ParseException {
-        JSONObject jsonObject = getJsonData();
-        JSONArray jsonArray = (JSONArray) jsonObject.get(key);
-        return jsonArray;
-    }
-
-    public static Object getJsonArrayData(String key, int index) throws IOException, ParseException {
-        JSONArray languages = getJsonArray(key);
-        return languages.get(index);
-    }
 }
+//    public static JSONArray getJsonArray(String key) throws IOException, ParseException {
+//        JSONObject jsonObject = getJsonData();
+//        JSONArray jsonArray = (JSONArray) jsonObject.get(key);
+//        return jsonArray;
+//    }
+//
+//    public static Object getJsonArrayData(String key, int index) throws IOException, ParseException {
+//        JSONArray languages = getJsonArray(key);
+//        return languages.get(index);
+//    }
+//}
